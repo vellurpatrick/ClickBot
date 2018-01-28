@@ -20,7 +20,7 @@ __fastcall TClickBot::TClickBot(TComponent* Owner)
 POINT cur; //variable for actual mouse position
 std::vector<POINT> t_cur; //vector of saved positions
 std::vector<String> t_char; //for displaying points in the listbox
-String s;  //string for files
+String s;  //string for displaying points
 int p = 0; //an iterator for mouse clicking
 
 void click()
@@ -40,8 +40,8 @@ void __fastcall TClickBot::HotKey(TMessage &Msg)
     if (Msg.WParam == 2)
     {
        t_cur.push_back(cur);     //add the present mouse position to vector
-       s = IntToStr(cur.x) + " : " + IntToStr(cur.y);     //display the position
-       ListBox1->Items->Add(s);
+       s = IntToStr(cur.x) + " : " + IntToStr(cur.y);     
+       ListBox1->Items->Add(s);                           //display the position
     }
 }
 
