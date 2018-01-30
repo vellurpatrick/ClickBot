@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-
+#define VCL_IOSTREAM
 #include <vcl.h>
 #pragma hdrstop
 #include <vector>
@@ -10,11 +10,10 @@
 #include <fstream>
 #include "Unit1.h"
 #include <iostream>
-#define VCL_IOSTREAM
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-using namespace std;
+
 TClickBot *ClickBot;
 //---------------------------------------------------------------------------
 __fastcall TClickBot::TClickBot(TComponent* Owner)
@@ -164,24 +163,24 @@ void __fastcall TClickBot::WebsiteClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
 void __fastcall TClickBot::Savestepstotxtfile1Click(TObject *Sender)
 {
-
-std::ostream& operator<<(std::ostream& __stream, AnsiString const& _str)
-{
-     __stream << _str.c_str();
-     return __stream;
-}
-
 
 	std::fstream filesave;
 
         if(SaveDialog1->Execute())
 	{
                 std::fstream plik;
-                plik.open( "liczba.txt", std::ios::out );
-                plik << SaveDialog1->FileName;
-                
+                plik.open( "steps.txt", std::ios::out );
+
+                for(int i=0; i<+t_char.size(); i++)
+                {       //std::vector<String> t_char;
+
+                        plik << t_char[i];
+
+                }
+
 		if(filesave == NULL)
 		{
 			ShowMessage("There was an error with saving the file!");
