@@ -32,6 +32,16 @@ __published:	// IDE-managed Components
         TButton *Button11;
         TButton *Button6;
         TButton *Button7;
+        TMainMenu *MainMenu1;
+        TMenuItem *File1;
+        TMenuItem *Savestepstotxtfile1;
+        TMenuItem *Loadstepsfromtxtfile1;
+        TMenuItem *Help1;
+        TMenuItem *Aboutauthor1;
+        TMenuItem *Mywebsite1;
+        TMenuItem *Howtouse1;
+        TOpenDialog *OpenDialog1;
+        TSaveDialog *SaveDialog1;
         void __fastcall Button1Click(TObject *Sender);
         void __fastcall Button2Click(TObject *Sender);
         void __fastcall Timer1Timer(TObject *Sender);
@@ -47,6 +57,8 @@ __published:	// IDE-managed Components
         void __fastcall Button6Click(TObject *Sender);
         void __fastcall Button7Click(TObject *Sender);
         void __fastcall WebsiteClick(TObject *Sender);
+        void __fastcall Savestepstotxtfile1Click(TObject *Sender);
+        void __fastcall Loadstepsfromtxtfile1Click(TObject *Sender);
 private:
         void __fastcall HotKey(TMessage &Msg);
 public:

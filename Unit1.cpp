@@ -4,11 +4,17 @@
 #pragma hdrstop
 #include <vector>
 #include <string>
+#include <windows.h>
+#include <cstdio>
+#include <iterator>
 #include <fstream>
 #include "Unit1.h"
+#include <iostream>
+#define VCL_IOSTREAM
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
+using namespace std;
 TClickBot *ClickBot;
 //---------------------------------------------------------------------------
 __fastcall TClickBot::TClickBot(TComponent* Owner)
@@ -41,7 +47,7 @@ void __fastcall TClickBot::HotKey(TMessage &Msg)
     {
        t_cur.push_back(cur);     //add the present mouse position to vector
        s = IntToStr(cur.x) + " : " + IntToStr(cur.y);     
-       ListBox1->Items->Add(s);                           //display the position
+       ListBox1->Items->Add(s);  //display the position
     }
 }
 
@@ -153,9 +159,45 @@ void __fastcall TClickBot::Button7Click(TObject *Sender)
 void __fastcall TClickBot::WebsiteClick(TObject *Sender)
 {
         ShellExecute(0, 0, "https://vellurpatrick.github.io", 0, 0 , SW_SHOW );
+        //test for site opening
 }
 //---------------------------------------------------------------------------
 
 
+void __fastcall TClickBot::Savestepstotxtfile1Click(TObject *Sender)
+{
 
+std::ostream& operator<<(std::ostream& __stream, AnsiString const& _str)
+{
+     __stream << _str.c_str();
+     return __stream;
+}
+
+
+	std::fstream filesave;
+
+        if(SaveDialog1->Execute())
+	{
+                std::fstream plik;
+                plik.open( "liczba.txt", std::ios::out );
+                plik << SaveDialog1->FileName;
+                
+		if(filesave == NULL)
+		{
+			ShowMessage("There was an error with saving the file!");
+			return;
+		}
+                plik.close();
+	}
+
+
+}
+//-----------------------------------9----------------------------------------
+
+
+void __fastcall TClickBot::Loadstepsfromtxtfile1Click(TObject *Sender)
+{
+        ;
+}
+//---------------------------------------------------------------------------
 

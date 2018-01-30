@@ -1,10 +1,10 @@
 object ClickBot: TClickBot
-  Left = 1294
-  Top = 222
+  Left = 1331
+  Top = 173
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'ClickBot'
-  ClientHeight = 256
+  ClientHeight = 257
   ClientWidth = 153
   Color = clMenu
   Font.Charset = DEFAULT_CHARSET
@@ -13,6 +13,7 @@ object ClickBot: TClickBot
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   FormStyle = fsStayOnTop
+  Menu = MainMenu1
   OldCreateOrder = False
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -156,5 +157,43 @@ object ClickBot: TClickBot
     OnTimer = Timer2Timer
     Left = 120
     Top = 80
+  end
+  object MainMenu1: TMainMenu
+    Left = 88
+    Top = 112
+    object File1: TMenuItem
+      Caption = 'File'
+      object Savestepstotxtfile1: TMenuItem
+        Caption = 'Save steps to .txt file'
+        OnClick = Savestepstotxtfile1Click
+      end
+      object Loadstepsfromtxtfile1: TMenuItem
+        Caption = 'Load steps from .txt file'
+        OnClick = Loadstepsfromtxtfile1Click
+      end
+    end
+    object Help1: TMenuItem
+      Caption = 'Help'
+      object Aboutauthor1: TMenuItem
+        Caption = 'About author'
+        object Mywebsite1: TMenuItem
+          Caption = 'My website'
+        end
+      end
+      object Howtouse1: TMenuItem
+        Caption = 'How to use'
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    FileName = 'D:\Veller\Programowanie\PROJEKTY NA GITHUB\ClickBot\README.txt'
+    Filter = 'Text files|*.txt'
+    Left = 120
+    Top = 112
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Text files|*.txt'
+    Left = 120
+    Top = 144
   end
 end
