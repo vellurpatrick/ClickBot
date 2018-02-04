@@ -10,6 +10,7 @@
 #include <fstream>
 #include "Unit1.h"
 #include <iostream>
+#include <sstream>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -52,7 +53,16 @@ void __fastcall TClickBot::HotKey(TMessage &Msg)
 
 void __fastcall TClickBot::Button1Click(TObject *Sender)
 {
-        Timer1->Enabled=true;
+        if(t_cur.size()<=0)
+        {
+                Application->MessageBox("Please first add points to the queue by pressing PgDn!",
+				        "ClickBot",
+	                                MB_OK | MB_ICONQUESTION);
+        }
+        else
+        {
+                Timer1->Enabled=true;
+        }
 }
 //---------------------------------------------------------------------------
 void __fastcall TClickBot::Button2Click(TObject *Sender)
@@ -102,7 +112,7 @@ void __fastcall TClickBot::FormCreate(TObject *Sender)
 {
         RegisterHotKey(ClickBot->Handle, 1, 0, VK_PRIOR);
         RegisterHotKey(ClickBot->Handle, 2, 0, VK_NEXT);
-        t_cur.push_back();
+        t_cur.erase(t_cur.begin(),t_cur.end());
 }
 //---------------------------------------------------------------------------
 
@@ -155,48 +165,16 @@ void __fastcall TClickBot::Button7Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TClickBot::WebsiteClick(TObject *Sender)
+void __fastcall TClickBot::Howtouse1Click(TObject *Sender)
 {
-        ShellExecute(0, 0, "https://vellurpatrick.github.io", 0, 0 , SW_SHOW );
-        //test for site opening
+        ; //here will be a link to the project help site
+        //ShellExecute(0, 0, "LINK", 0, 0 , SW_SHOW );
 }
 //---------------------------------------------------------------------------
 
-
-
-void __fastcall TClickBot::Savestepstotxtfile1Click(TObject *Sender)
+void __fastcall TClickBot::Mywebsite1Click(TObject *Sender)
 {
-
-	std::fstream filesave;
-
-        if(SaveDialog1->Execute())
-	{
-                std::fstream plik;
-                plik.open( "steps.txt", std::ios::out );
-
-                for(int i=0; i<+t_char.size(); i++)
-                {       //std::vector<String> t_char;
-
-                        plik << t_char[i];
-
-                }
-
-		if(filesave == NULL)
-		{
-			ShowMessage("There was an error with saving the file!");
-			return;
-		}
-                plik.close();
-	}
-
-
-}
-//-----------------------------------9----------------------------------------
-
-
-void __fastcall TClickBot::Loadstepsfromtxtfile1Click(TObject *Sender)
-{
-        ;
+        ShellExecute(0, 0, "https://uw423.mikr.us", 0, 0 , SW_SHOW );
 }
 //---------------------------------------------------------------------------
 

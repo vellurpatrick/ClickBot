@@ -1,6 +1,6 @@
 object ClickBot: TClickBot
-  Left = 1331
-  Top = 173
+  Left = 1451
+  Top = 220
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'ClickBot'
@@ -161,27 +161,18 @@ object ClickBot: TClickBot
   object MainMenu1: TMainMenu
     Left = 88
     Top = 112
-    object File1: TMenuItem
-      Caption = 'File'
-      object Savestepstotxtfile1: TMenuItem
-        Caption = 'Save steps to .txt file'
-        OnClick = Savestepstotxtfile1Click
-      end
-      object Loadstepsfromtxtfile1: TMenuItem
-        Caption = 'Load steps from .txt file'
-        OnClick = Loadstepsfromtxtfile1Click
-      end
-    end
     object Help1: TMenuItem
       Caption = 'Help'
       object Aboutauthor1: TMenuItem
         Caption = 'About author'
         object Mywebsite1: TMenuItem
           Caption = 'My website'
+          OnClick = Mywebsite1Click
         end
       end
       object Howtouse1: TMenuItem
         Caption = 'How to use'
+        OnClick = Howtouse1Click
       end
     end
   end
