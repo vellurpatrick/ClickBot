@@ -174,7 +174,7 @@ void __fastcall TClickBot::Howtouse1Click(TObject *Sender)
 
 void __fastcall TClickBot::Mywebsite1Click(TObject *Sender)
 {
-        ShellExecute(0, 0, "https://uw423.mikr.us", 0, 0 , SW_SHOW );
+        ShellExecute(0, 0, "http://vellur.mikr.us", 0, 0 , SW_SHOW );
 }
 //---------------------------------------------------------------------------
 
