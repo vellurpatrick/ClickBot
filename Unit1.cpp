@@ -167,8 +167,7 @@ void __fastcall TClickBot::Button7Click(TObject *Sender)
 
 void __fastcall TClickBot::Howtouse1Click(TObject *Sender)
 {
-        ; //here will be a link to the project help site
-        //ShellExecute(0, 0, "LINK", 0, 0 , SW_SHOW );
+        ShellExecute(0, 0, "http://vellur.mikr.us/clickbot", 0, 0 , SW_SHOW );
 }
 //---------------------------------------------------------------------------
 
