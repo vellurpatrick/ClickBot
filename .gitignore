@@ -9,11 +9,9 @@
 *.~cpp
 *.~dfm
 *.~h
-*.bpr
 *.obj
 *.res
 *.tds
-*.dfm
 
 
 persistent
