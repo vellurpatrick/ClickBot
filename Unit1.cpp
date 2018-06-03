@@ -7,10 +7,7 @@
 #include <windows.h>
 #include <cstdio>
 #include <iterator>
-#include <fstream>
 #include "Unit1.h"
-#include <iostream>
-#include <sstream>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -26,8 +23,8 @@ __fastcall TClickBot::TClickBot(TComponent* Owner)
 POINT cur; //variable for actual mouse position
 std::vector<POINT> t_cur; //vector of saved positions
 std::vector<String> t_char; //for displaying points in the listbox
-String s;  //string for displaying points
-int p = 0; //an iterator for mouse clicking
+String s;  //string for displaying actual point
+unsigned int p = 0; //an iterator for mouse clicking
 
 void click()
 {
@@ -92,7 +89,7 @@ void __fastcall TClickBot::Timer2Timer(TObject *Sender)
 
 void __fastcall TClickBot::Button3Click(TObject *Sender)
 {
-        ListBox1->Clear(); //it just clears the listbox
+        ListBox1->Clear();
 }
 //---------------------------------------------------------------------------
 
@@ -100,7 +97,7 @@ void __fastcall TClickBot::Button3Click(TObject *Sender)
 void __fastcall TClickBot::Button4Click(TObject *Sender)
 {
         ListBox1->Clear();
-        for (int i=0; i < t_cur.size(); i++)
+        for (unsigned int i=0; i < t_cur.size(); i++)
         {
                 s = IntToStr(t_cur[i].x) + " : " + IntToStr(t_cur[i].y);
                 ListBox1->Items->Add(s);
@@ -124,10 +121,6 @@ void __fastcall TClickBot::Button5Click(TObject *Sender)
         //first erases whole vector, then clears the listbox
 }
 //---------------------------------------------------------------------------
-
-
-
-
 
 void __fastcall TClickBot::Button8Click(TObject *Sender)
 {
@@ -167,13 +160,14 @@ void __fastcall TClickBot::Button7Click(TObject *Sender)
 
 void __fastcall TClickBot::Howtouse1Click(TObject *Sender)
 {
-        ShellExecute(0, 0, "http://vellur.mikr.us/clickbot", 0, 0 , SW_SHOW );
+        ShellExecute(0, 0, "https://github.com/vellurpatrick/ClickBot/blob/master/README.md", 0, 0 , SW_SHOW );
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TClickBot::Mywebsite1Click(TObject *Sender)
 {
-        ShellExecute(0, 0, "http://vellur.mikr.us", 0, 0 , SW_SHOW );
+        ShellExecute(0, 0, "https://github.com/vellurpatrick", 0, 0 , SW_SHOW );
 }
 //---------------------------------------------------------------------------
+
 
