@@ -1,3 +1,4 @@
+# CLickBot
 A small programmable mouse click-bot. 
 
 Project1.bpr is the C++ Builder 6 project file.
