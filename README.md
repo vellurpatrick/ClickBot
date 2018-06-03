@@ -1,7 +1,8 @@
-# CLickBot
+# ClickBot
 A small programmable mouse click-bot. 
 
 Project1.bpr is the C++ Builder 6 project file.
+It is not using any external libraries.
 
 Page Up (PgUp) button stops application from operating the mouse.
 Page Down (PgDn) button saves and queues mouse point to the list.
