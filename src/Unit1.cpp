@@ -1,16 +1,18 @@
 //---------------------------------------------------------------------------
 #define VCL_IOSTREAM
-#include <vcl.h>
+
 #pragma hdrstop
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+
+#include <vcl.h>
 #include <vector>
 #include <string>
 #include <windows.h>
 #include <cstdio>
 #include <iterator>
+
 #include "Unit1.h"
-//---------------------------------------------------------------------------
-#pragma package(smart_init)
-#pragma resource "*.dfm"
 
 TClickBot *ClickBot;
 //---------------------------------------------------------------------------

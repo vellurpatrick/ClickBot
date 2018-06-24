@@ -1,6 +1,6 @@
 object ClickBot: TClickBot
-  Left = 1451
-  Top = 220
+  Left = 1505
+  Top = 261
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'ClickBot'
@@ -166,7 +166,7 @@ object ClickBot: TClickBot
       object Aboutauthor1: TMenuItem
         Caption = 'About author'
         object Mywebsite1: TMenuItem
-          Caption = 'My website'
+          Caption = 'My Github'
           OnClick = Mywebsite1Click
         end
       end
