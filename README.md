@@ -1,4 +1,6 @@
 # ClickBot
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
 A small programmable mouse click-bot. 
 
 Project1.bpr is the C++ Builder 6 project file.
